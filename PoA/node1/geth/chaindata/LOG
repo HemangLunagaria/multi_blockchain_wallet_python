@@ -1,0 +1,40 @@
+=============== Sep 26, 2021 (AEST) ===============
+23:29:52.065535 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+23:29:52.161741 db@open opening
+23:29:52.194127 version@stat F·[] S·0B[] Sc·[]
+23:29:52.255361 db@janitor F·2 G·0
+23:29:52.255485 db@open done T·93.653835ms
+23:29:52.276695 db@close closing
+23:29:52.277046 db@close done T·348.17µs
+=============== Sep 26, 2021 (AEST) ===============
+23:30:50.229711 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+23:30:50.230784 version@stat F·[] S·0B[] Sc·[]
+23:30:50.230833 db@open opening
+23:30:50.230935 journal@recovery F·1
+23:30:50.238580 journal@recovery recovering @1
+23:30:50.247356 memdb@flush created L0@2 N·624 S·50KiB "\x02d\xfc..\x19Ba,v431":"\xfe\x88\xcf..H\xef\xcc,v364"
+23:30:50.253396 version@stat F·[1] S·50KiB[50KiB] Sc·[0.25]
+23:30:50.319298 db@janitor F·3 G·0
+23:30:50.319358 db@open done T·88.507396ms
+23:37:37.557560 db@close closing
+23:37:37.558321 db@close done T·757.057µs
+=============== Sep 26, 2021 (AEST) ===============
+23:37:44.541883 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+23:37:44.547434 version@stat F·[1] S·50KiB[50KiB] Sc·[0.25]
+23:37:44.547501 db@open opening
+23:37:44.547614 journal@recovery F·1
+23:37:44.553340 journal@recovery recovering @3
+23:37:44.591305 memdb@flush created L0@5 N·12 S·925B "Dat..ion,v626":"r\x00\x00..\xf5ߡ,v633"
+23:37:44.598552 version@stat F·[2] S·51KiB[51KiB] Sc·[0.50]
+23:37:44.702791 db@janitor F·4 G·0
+23:37:44.702847 db@open done T·155.327009ms
+=============== Sep 26, 2021 (AEST) ===============
+23:37:56.657026 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+23:37:56.658211 version@stat F·[2] S·51KiB[51KiB] Sc·[0.50]
+23:37:56.658256 db@open opening
+23:37:56.658366 journal@recovery F·1
+23:37:56.663936 journal@recovery recovering @6
+23:37:56.691151 memdb@flush created L0@8 N·1 S·217B "Las..der,v639":"Las..der,v639"
+23:37:56.699847 version@stat F·[3] S·51KiB[51KiB] Sc·[0.75]
+23:37:56.783056 db@janitor F·5 G·0
+23:37:56.783113 db@open done T·124.835474ms
