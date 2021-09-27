@@ -2,14 +2,7 @@
 
 Proof of Authority (PoA) is consensus algorithm that provides high performance and fault tolerance. In PoA, rights to generate new blocks are awarded to nodes that have proven their authority to do so. To gain this authority and a right to generate new blocks, a node must pass a preliminary authentication. This kind of consensus algorithm is used with permissioned blockchain.
 
-![Introduction](Images/introduction.jpeg)
-
-## Creating PoA based Blockchaian
-
-### Creating Nodes
-
-
-The commands create a keystore directory and inside of thay a keystore file that is used to open the wallet in MyCrypto wallet app.
+## PoA based Blockchaian
 
 #### Node Details
 
@@ -62,39 +55,3 @@ Flags:
 4. --port :  Port on which network node is listening
 5. --bootnodes : Comma separated enode URLs for P2P discovery bootstrap
 6. --allow-insecure-unlock : Allow insecure account unlocking when account-related RPCs are exposed by http
-
-##### Error while running  the nodes: Received the IPC endpoint is longer than 104 characters which is why renaming directory PoA_Development_Chain to PoA.
-
-![IPC Endpoint Error](Screenshots/name_length_error.png)
-
-Running nodes
-
-![Running nodes](Screenshots/Running_nodes.png)
-
-## Connecting the wallet
-
-1. Open the MyCrypto app, then click Change Network at the bottom left. Click "Add Custom Node", then add the custom network information that you set in the genesis. Scroll down to choose Custom in the "Network" column to reveal more options like Chain ID. 
-
-![create network](Screenshots/Custom_network_node_creation.png)
-
-Please ignore the error messages as the custom network as already created and this is for demo purposes.
-
-2. Login to account created above to see the balance.
-
-![Opening wallet](Screenshots/opening_wallet_1.png)
-
-![Opening wallet](Screenshots/opening_wallet_2.png)
-
-![Opening wallet](Screenshots/opening_wallet_3.png)
-
-![Opening wallet](Screenshots/opening_wallet_4.png)
-
-3. Transfer the balance to another account as a test transaction. As part of testing, couple of transactions were made between the accounts that were created above.
-
-![transaction one](Screenshots/Transaction_1.png)
-![transaction two](Screenshots/Transaction_2.png)
-
-## Resources
-
-1. [PoA introduction](https://apla.readthedocs.io/en/latest/concepts/consensus.html)
-2. [GETH Documentation](https://geth.ethereum.org/docs/interface/command-line-options)

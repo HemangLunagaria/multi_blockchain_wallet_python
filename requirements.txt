@@ -1,0 +1,4 @@
+Following blockchain specific libraries are required to run the wallet:
+
+1. HD_Wallet_Derice : Follow HD_Wallet_Derive.md for details on how to install the library
+2. bit& web3 : Follow Blockchain_TX_Install_Guide.md on how to install the libraries

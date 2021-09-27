@@ -2,11 +2,15 @@
 import subprocess
 import json
 import os
+
 from web3 import Web3
-from bit import wif_to_key
 from eth_account import Account
 from web3.middleware import geth_poa_middleware
-# from bit import PrivateKeyTestnet, wif_to_key
+
+from bit import PrivateKeyTestnet
+from bit.network import NetworkAPI
+# from bit import wif_to_key
+
 from dotenv import load_dotenv
 
 from constants import *
@@ -18,9 +22,6 @@ w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 load_dotenv()
 mnemonic=os.getenv("mnemonic")
 # print(mnemonic)
-# Import constants.py and necessary functions from bit and web3
-# YOUR CODE HERE
- 
  
 # Create a function called `derive_wallets`
 def derive_wallets(coin):
@@ -42,17 +43,18 @@ def priv_key_to_account(coin, priv_key):
     if (coin == ETH):
         return Account.from_key(priv_key)
     elif (coin == BTCTEST):
-        return wif_to_key(priv_key)
+        return PrivateKeyTestnet(priv_key)
+        # return wif_to_key(priv_key)
 
-# # Create a function called `create_tx` that creates an unsigned transaction appropriate metadata.
+# Create a function called `create_tx` that creates an unsigned transaction appropriate metadata.
 def create_tx(coin, account, to, amount):
     if (coin == ETH):
         return create_eth_tx(account, to, amount)
     elif (coin ==BTCTEST):
-        tx = []
-        tx.append((to, amount, BTC))
-        return tx
-        # return PrivateKeyTestnet.prepare_transaction(account.address, [(to, amount, BTC)])
+        # tx = []
+        # tx.append((to, amount, BTC))
+        # return tx
+        return PrivateKeyTestnet.prepare_transaction(account.address, [(to, amount, BTC)])
 
 def create_eth_tx(account, recipient, amount):
     gasEstimate = w3.eth.estimateGas(
@@ -76,8 +78,9 @@ def send_tx(coin, priv_key_account, to, amount):
         signed_tx = account.sign_transaction(raw_tx)
         result = w3.eth.sendRawTransaction(signed_tx.rawTransaction)
         print(result.hex())
-        # return result.hex()
     elif (coin == BTCTEST):
         account = priv_key_to_account(coin, priv_key_account)
         tx = create_tx(coin, account, to, amount)
-        print(account.send(tx))
+        signed = account.sign_transaction(tx)
+        NetworkAPI.broadcast_tx_testnet(signed)
+        print(account.get_transactions()[0])
